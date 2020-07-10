@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+ <input type="number" id="inputArea" min="1" max="100" required>
+   <button type="button" onclick="isValidNum()">Submit</button> 
+    <p id="demo"></p>
+
+    <input type="number" name="" id="rangOverflow" max="100">
+    <button type="button" onclick="isRangeOverflow()">Ok</button>
+    <p id="demo1"></p>
+    <input type="number" name="" id="rangUnderflow" min="100">
+    <button type="button" onclick="isRangeUnderflow()">Ok</button>
+    <p id="demo2"></p>
+   <script>
+
+    //    checkValidity()
+       function isValidNum(){
+           let takeElement = document.getElementById("inputArea");
+           if(!takeElement.checkValidity()){
+               document.getElementById("demo").innerHTML = takeElement.validationMessage;
+           }
+           else{
+            document.getElementById("demo").innerHTML = "Input is valid";
+           }
+       }
+
+       function isRangeOverflow(){
+           let txt = "";
+           if(document.getElementById("rangOverflow").validity.rangeOverflow){
+               txt = "entered value is too large";
+           }
+
+           document.getElementById("demo1").innerHTML = txt;
+       }
+       function isRangeUnderflow(){
+           let txt = "";
+           if(document.getElementById("rangUnderflow").validity.rangeUnderflow){
+               txt = "entered value is too small";
+           }
+
+           document.getElementById("demo2").innerHTML = txt;
+       }
+   </script>
+</body>
+</html>

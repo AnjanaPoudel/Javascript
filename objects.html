@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <script>
+        //creating object with with object literal
+       let person = {
+           firstName: "Anzana",
+           lastName: "Poudel",
+           age: 18,
+           fullName: function(){
+               return this.firstName + " " + this.lastName;
+           }
+       };
+       person.favColor = "Grey";
+       person.greetThem = function(){
+           return "Hello " + person.firstName;
+       };
+
+       let myArray = Object.values(person);
+       document.getElementById("demo").innerHTML = myArray;
+
+       let myString = JSON.stringify(person);
+    
+    //    delete person.lastName;
+      
+
+    //    with new keyword
+// var person1 = new Object();
+// person1.firstName = "Anoop";
+// person1.lastName = "Poudel";
+
+let x = person;
+x.firstName = "Ashmita";
+console.log("Firstname in x is ",x.firstName);
+console.log("FirstName in person object is ",person.firstName);
+console.log(person["firstName"] + " " + "is " + person["age"] + " years old");
+
+let txt = " ";
+let y;
+for (y in person){
+    txt += person[y] + " ";
+}
+
+console.log("This is achieved with for..in loop ",txt);
+
+// getters and setters
+let myNewObject = {
+firstName: "Harry",
+lastName: "Joseph",
+age: 37,
+get giveAge(){
+    return this.age;
+},
+set favcolor(color){
+    this.favouriteColor = color;
+}
+};
+
+myNewObject.favcolor = "maroon";
+document.getElementById("demo2").innerHTML = myNewObject.favouriteColor;
+
+document.getElementById("demo1").innerHTML = myNewObject.giveAge;
+
+
+// Object Constructor functions
+
+function PersonalInfo(first,last,address,age){
+    this.firstName = first;
+    this.lastName = last;
+    this.address = address;
+    this.age = age;
+    }
+
+// Javascript prototyping
+ PersonalInfo.prototype.name = function(){
+     return this.firstName + " " + this.lastName;
+ };
+
+ PersonalInfo.prototype.eyecolor = "blue";
+let person1 = new PersonalInfo("Sejal","Sharma","Kathmandu",19);
+let person2 = new PersonalInfo("Abimanyu","KC","Pokhara",22);
+let person3 = new PersonalInfo("Sarthak","Pun","Butwal",21);
+
+// person1.fullName = function(){
+//     return this.firstName + " " + this.lastName;
+// };
+
+
+
+// ES5 Object Methods
+let newObject = {
+    x: 100,
+    y: 200
+};
+// Object.preventExtensions(newObject);
+let i = Object.isExtensible(newObject);
+console.log(i);
+Object.defineProperty(newObject,"z",{value:300});
+// Object.defineProperty(newObject,"x",{writable:false});
+// Object.defineProperty(newObject,"x",{enumerable:false});
+Object.defineProperty(newObject,"x",{value:600});
+Object.defineProperty(newObject,"values",{
+    get: function(){return this.x + " " + this.y + " " + this.z;}
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>The lowest number is <span id="low"></span></p>
+    <p id="fore"></p>
+    <p id="filtr"></p>
+    <script>
+        var points = [20,100,900,50,23400];
+        document.getElementById("low").innerHTML = lowNum(points);
+        function lowNum(arr){
+            return Math.min.apply(null,arr);
+        }
+        var text = "";
+        points.forEach(myfunction);
+        function myfunction(value,index,array){
+            text = text + value +"<br>";
+        } 
+        document.getElementById("fore").innerHTML = text;
+        var numover50 = points.filter(myFunction);
+        function myFunction(value,index,array){
+            return value>50;
+        } 
+        document.getElementById("filtr").innerHTML = numover50;
+        var d = new Date();
+        console.log(d);
+    </script>
+
+</body>
+</html>

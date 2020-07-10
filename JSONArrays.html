@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        let myJSONObject = {
+            "name": "Anzana",
+            "age": 18,
+            "cars": ["Ford","BMW","Mercedes"]
+        }
+        console.log("Car1: " + myJSONObject.cars[0]);
+
+let x = "";
+        for(let i = 0; i<myJSONObject.cars.length; i++){
+x += myJSONObject.cars[i] + "<br>";
+        }
+        document.getElementById("demo").innerHTML = x;
+
+        myJSONObject.cars[1] = "Toyota";
+        delete myJSONObject.age;
+    </script>
+</body>
+</html>

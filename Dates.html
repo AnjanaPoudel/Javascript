@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="date0"></p>
+    <p id="date1"></p>
+    <p id="date2"></p>
+    <p id="date3"></p>
+    <p id="date4"></p>
+    <p id="date5"></p>
+    <p id="date6"></p>
+    <p id="date7"></p>
+    <p id="date8"></p>
+    <p id="displayCompleteDate"></p>
+
+    <script>
+
+        //get methods
+        var d = new Date();
+        document.getElementById("date0").innerHTML = d;
+        document.getElementById("date1").innerHTML = d.getFullYear();
+        document.getElementById("date2").innerHTML = d.getMonth()+1;
+        document.getElementById("date3").innerHTML = d.getDate();
+        document.getElementById("date4").innerHTML = d.getHours();
+        document.getElementById("date5").innerHTML = d.getMinutes();
+        document.getElementById("date6").innerHTML = d.getSeconds();
+        document.getElementById("date7").innerHTML = d.getDay()+1;
+        document.getElementById("date8").innerHTML = d.getUTCMonth();
+        document.getElementById("displayCompleteDate").innerHTML = d.getFullYear()+"/"+d.getMonth()+"/"+d.getSeconds();
+         d.setFullYear(2024);
+         d.setMonth(0);
+         d.setDate(30);
+         d.setHours(21);
+         d.setMinutes(12);
+         d.setSeconds(51);
+        console.log(d);
+        console.log(typeof(d));
+
+    </script>
+</body>
+</html>

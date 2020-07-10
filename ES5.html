@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="toButton();">click me</button>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <script>
+        // trim method
+        var str = "  hello everyone    ";   
+        console.log(str);
+        console.log(str.trim());
+
+        // Array.isArray()
+        // var arr = [3,4,5,"anzana",18,"anoooop","ashmeeta"];
+        var myObject = {
+            color: "blue",
+            size: 18,
+            shape: "round"
+        };
+        // var x = Array.isArray(arr);
+        var x = Array.isArray(myObject);
+        console.log(x);
+
+        // forEach()
+        var myArray = ["anzana","anoop",34,56];
+        var txt = "";
+        myArray.forEach(myFunction);
+
+        function myFunction(someVal){
+            txt = txt + someVal + "<br>";
+        }
+
+        function toButton(){
+             document.getElementById("demo").innerHTML = txt;
+        }
+
+        // Array.map()
+        var numbers1 = [1,2,3,4,5,6,7,8,9,10];
+        var numbers2 = numbers1.map(increaseByOne);
+
+        function increaseByOne(value){
+            return value + 1;
+        }
+
+
+        document.getElementById("demo1").innerHTML = numbers2;
+
+        // Array.filter()
+         var numbers = [10,3,45,70,100,2,46,32,16,2,200];
+         var divisibleBy5 = numbers.filter(divisibleByFive);
+         
+         function divisibleByFive(someVal){
+             return (someVal%5==0);
+         }
+
+         var allDivisibleByFive = numbers.every(divisibleByFive);
+
+         console.log("All divisible by 5 is "+allDivisibleByFive);
+         var someDivisibleByFive = numbers.some(divisibleByFive);
+         console.log("Some numbers divisible by 5 is "+someDivisibleByFive);
+         
+         var indexx = numbers.indexOf(2);
+         console.log("The index of 2 is "+indexx);
+         var lastIndexx = numbers.lastIndexOf(2);
+         console.log("The position of 2 is "+(lastIndexx+1));
+
+         document.getElementById("demo3").innerHTML = divisibleBy5;
+         
+        //  charAt()
+         var strng = "anzana";
+         console.log(strng.charAt(1));
+    </script>
+</body>
+</html>

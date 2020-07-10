@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        //Function expression
+        var x = function(a,b){return a*b;};
+        console.log(x(2,3));
+        var addition = function(a,b){return a+b;};
+        console.log(addition(4,5));
+
+        //Creating function using Function constructor
+        var division = new Function("a","b","return a/b");
+        console.log(division(8,2));
+
+//Function hoisting       
+console.log( myFunction(5));
+function myFunction(y) {
+  return y * y;
+}
+
+
+//arguments.length
+function args(a,b,c,d,e,f){
+    document.getElementById("demo").innerHTML = arguments.length;
+} 
+
+args(2,3,4,5,6,7);
+console.log(args.toString());
+
+//Arrow function
+addition = (x,y) => x + y;
+console.log(addition(4,8));
+
+multiplication = x,y => x * y;
+console.log(multiplication(4,6));
+
+const a = (a,b) => a/b;
+console.log(a(6,2));
+
+//default parameters
+function defaults(a=0,b=0,c=0){
+    return (a+b+c);
+}
+
+console.log("Sum of one ",defaults(2));
+console.log("Sum of two ",defaults(3,4));
+console.log("Sum of three ",defaults(2,2,3));
+
+const y = sumOfAll(2,3,45,6,7,8,9,0);
+
+function sumOfAll(){
+    let i;
+    let sum = 0;
+    for(i=0;i<arguments.length;i++){
+        sum += arguments[i];
+    }
+    return sum;
+}
+
+console.log("Sum with argument object ",y);
+
+
+//call function
+var person = {
+    fullName: function(){
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+var person1 = {
+    firstName: "Anjana",
+    lastName: "Poudel",
+    fullName: function(){
+        return this.firstName + " " + this.lastName; 
+    },
+    greetings: function(){
+        return "hello " + this.firstName + " " + this.lastName;
+    },
+    city: function(cities){
+        return this.firstName + " " + this.lastName + " " + "from " + cities;
+    }
+};
+var person2 = {
+    firstName: "Anooop",
+    lastName: "Poudel"
+};
+
+console.log(person.fullName.call(person1));
+console.log(person.fullName.call(person2));
+console.log(person1.greetings.call(person2));
+console.log(person1.city.call(person2,"Butwal"));
+
+//Math.max method
+console.log(Math.max(4,6,90,4788));
+console.log(Math.max.apply(null,[3,4,5,6,7,8,9,0]));
+
+
+
+    </script>
+</body>
+</html>

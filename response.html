@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="demo"></div>
+<button onclick="loadDoc('someRandomFile.html',myNewFunction)">Click Me!</button><br>
+<div id="demo1"></div><br>
+<button onclick="allHeadersResponse()">ALLHEADERS</button>
+<p id="demo2"></p>
+<button onclick="specificHeaderInfo()">OneHeader</button>
+    
+    
+    <script>
+function loadDoc(url,callBackFunction){
+    let xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            callBackFunction(this);
+        }
+    };
+    xhttp.open("GET",url,true);
+    xhttp.send();
+}
+
+function myNewFunction(xhttp){
+    document.getElementById("demo").innerHTML = xhttp.responseText;
+}
+
+function allHeadersResponse(){
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            document.getElementById("demo1").innerHTML = this.getAllResponseHeaders();
+        }
+    };
+    xhttp.open("GET","someRandomFile.html",true);
+    xhttp.send();
+}
+
+
+function specificHeaderInfo(){
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            document.getElementById("demo2").innerHTML = this.getResponseHeader("content-type");
+        }
+    };
+    xhttp.open("GET","someRandomFile.html",true);
+    xhttp.send();
+}
+    </script>
+</body>
+</html>

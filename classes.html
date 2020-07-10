@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class someNumbers{
+            constructor(x,y){
+                this.x = x;
+                this.y = y;
+            }
+
+           sum(z){
+               return z+this.x+this.y;
+            }
+
+        get giveValue(){
+            return this.x;
+        }
+
+        set setVal(x){
+         return this.x = x;
+         
+        }
+        }
+
+        num1 = new someNumbers(20,30);
+        console.log(num1.x,num1.y);
+        num2 = new someNumbers(40,100);
+        num2.setVal = 60;
+        num1.setVal = 200;
+    </script>
+</body>
+</html>

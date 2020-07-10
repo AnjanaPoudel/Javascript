@@ -1,0 +1,54 @@
+html,body{
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    color: darkgray;
+}
+
+.img1,.img2,.img3{
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.img1{
+    background-image: url(imgs/crowd-of-protesters-holding-signs-4614145.jpg);
+    min-height: 100%;
+}
+
+.img2{
+    background-image: url(imgs/crowd-protesting-on-street-4561542.jpg);
+    min-height: 300px;
+}
+
+.img3{
+    background-image: url(imgs/people-protesting-on-a-street-4508669.jpg);
+    min-height: 300px;
+}
+
+.section{
+    padding: 20px;
+    background-color: #2d3436;
+    /* opacity: 0.3; */
+}
+
+/* .transparent{
+    background-color: transparent;
+}  */
+
+.img1 .img1-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.img1 .img1-text .border{
+    background-color: #636e72;
+    color: snow;
+    padding: 20px 30px;
+}

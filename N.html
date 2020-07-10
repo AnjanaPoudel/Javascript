@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" id="full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="demo">Document</title>
+</head>
+<body>
+    <h1 id="firstHeading">My first Heading</h1>
+    <p id="myParagraph"></p>
+    <div id="myDiv" style="height: 300px;width: 400px;background-color: darkolivegreen;">
+<p id="p1">This is the paragraph inside div.</p>
+    </div>
+    <script>
+        // DOM Navigation
+        let myTitle = document.getElementById("demo").childNodes[0].nodeValue;
+        document.getElementById("myParagraph").innerHTML = document.getElementById("firstHeading").childNodes[0].nodeValue;
+
+        // accessing full document
+        let fullDoc = document.documentElement.innerHTML;
+
+        // accessing the body of the document
+        let bodyDoc = document.body.innerHTML;
+
+        // The nodeName property
+        let fullDocNodeName = document.documentElement.nodeName;
+
+        // The nodeType property
+        let fullDocNodeType = document.nodeType;
+        let h1NodeType = document.getElementById("firstHeading").nodeType;
+        let h1TextNodeType = document.getElementById("firstHeading").childNodes[0].nodeType;
+
+        // Creating and appending a node
+        let newParagraph = document.createElement("p");
+        let newParagraphText = document.createTextNode("This is my new paragraph");
+        newParagraph.appendChild(newParagraphText);                 //with appendchild()
+
+        document.getElementById("myDiv").appendChild(newParagraph);
+
+        let newHeading = document.createElement("h2");
+        let newHeadingText = document.createTextNode("This is heading 2");
+        newHeading.appendChild(newHeadingText);
+        document.getElementById("myDiv").appendChild(newHeading);
+
+        let heading1 = document.createElement("h1");
+        let heading1Text = document.createTextNode("This is heading 1");
+        heading1.appendChild(heading1Text);
+        
+        let getChild = document.getElementById("myDiv").firstChild;       
+        document.getElementById("myDiv").insertBefore(heading1,getChild);      //with insertBefore()
+
+       document.getElementById("p1").remove();          //remove element
+
+    //    replace elements
+        let toReplace = document.createElement("p");
+        let toReplaceText = document.createTextNode("This is replaced text");
+        toReplace.appendChild(toReplaceText);
+       document.getElementById("myDiv").replaceChild(toReplace,document.getElementById("myDiv").firstChild);
+
+    //    html collection with getElementsByTagName()
+    
+
+    </script>
+</body>
+</html>

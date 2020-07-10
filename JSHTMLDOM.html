@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS HTML DOM</title>
+</head>
+<body>
+    <button id="btn">Click me</button>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3" class="demo"></p>
+    <p id="demo4" class = "demo"></p>
+    <p id="demo5"></p>
+    <script>
+document.getElementById("demo1").innerHTML = "Hello everyone!";
+
+document.getElementById("btn").onclick = function(){
+    document.getElementById("demo2").innerHTML = "Button was clicked!";
+}
+
+// diffrent document object's props
+// console.log(document.URL);
+// console.log(document.scripts)
+// console.log(document.title);
+// console.log(document.documentElement);
+// console.log(document.lastModified);
+// console.log(document.implementation);
+// console.log(document.doctype);
+// console.log(document.cookie);
+
+
+let getP = document.getElementsByTagName("p");
+document.getElementById("demo3").innerHTML = "The content in paragraph 1 is " + getP[0].innerHTML;
+
+let demoClass = document.getElementsByClassName("demo");
+demoClass[1].innerHTML= document.getElementById("demo3").innerHTML;
+
+//html dom
+document.write("helloooooooo idots!");
+
+//changing style of html element
+document.getElementById("demo2").style.color = "red";
+document.getElementById("demo2").style.fontSize = "20px";
+document.getElementById("demo3").style.color = "green";
+document.getElementById("demo3").style.fontFamily = "Arial";
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="arrnumbs"></p>
+    <p id="forin"></p>
+    <p id="forof"></p>
+    <script>
+        var numbs = [1,2,3,5,6,7];
+        var i;
+        var text = "" ;
+        for(i=0;i<numbs.length;i++){
+            text += numbs[i]+" ";
+            }
+            console.log(text);
+        // document.getElementById("arrnumbs").innerHTML = text;
+
+        var person = {
+            firstName:"Anzana",
+            lastName:"Poudel",
+            age:18
+        };
+
+        var x;
+        var text1 = "";
+        for(x in person){
+            text1 += person[x]+" ";
+        }
+        document.getElementById("forin").innerHTML = text1;
+
+        var someText = "Javascript";
+        var y;
+        for(x of someText){
+           console.log(x+" ");
+        }
+   var j=0;
+        while(j<5){
+            console.log(j);
+            j++;
+        }
+    </script>
+</body>
+</html>

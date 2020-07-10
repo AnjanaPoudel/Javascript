@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // let
+        var x = 20;
+        {
+            let x = 50;
+            console.log("x is 50 here");
+
+        }
+        console.log("x is 20 here");
+
+        // default parameters
+        function defFunction(x,y = 0){
+            return x+y;
+        }
+
+        console.log(defFunction(3));
+        console.log(defFunction(4,5));
+
+        //Array.find() and Array.findIndex()
+        var numbers = [4,7,9,10,100,60,80,99];
+        var first = numbers.find(myfunction);
+
+        function myfunction(value,index,array){
+            return value>10;
+        }
+
+        console.log(first);
+
+        var indexOfFirst = numbers.findIndex(myfunction);
+        console.log("Index of first element to pass the test is "+indexOfFirst);
+  
+        // var a = Number.MIN_SAFE_INTEGER;
+        // console.log(a);
+
+        console.log(Number.isInteger(20));
+        console.log(Number.isInteger(12.66));
+
+        // isFinite()
+        console.log(isFinite(10/3));
+        console.log(isFinite("hey"));
+        console.log(isFinite(2/0));
+
+        // isNaN()
+        console.log(isNaN("hyyyy"));
+        console.log(isNaN(6));
+
+        //Exponentiation operator
+        var z = 6 ** 6;
+        console.log(z);
+
+    </script>
+</body>
+</html>

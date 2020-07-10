@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="generateRandom()">Click Me</button>
+    <p id="random"></p>
+    <p id="random2"></p>
+    <button onclick="getRandomNumber(1,5)">Click here</button>
+    <p id="mintomax"></p>
+    <script>
+
+        //1.Math object methods
+        // console.log(exp(2));
+        console.log(Math.PI);
+        console.log(Math.round(2.5));
+        console.log(Math.pow(5,3));
+        console.log(Math.sqrt(16));
+        console.log(Math.abs(-7.9));
+        console.log(Math.ceil(6.2));
+        console.log(Math.floor(6.2));
+        console.log(Math.sin(60*Math.PI/180));
+        console.log(Math.cos(30*Math.PI/180));
+        console.log(Math.min(1,4,8,0,60));
+        console.log(Math.max(1,4,8,0,60));
+
+       function generateRandom(){
+          document.getElementById("random").innerHTML =  Math.random();
+          document.getElementById("random2").innerHTML =  Math.floor(Math.random()*40)+1;
+       } 
+
+
+       //2.Generate random numbers
+       function getRandomNumber(min,max){
+        document.getElementById("mintomax").innerHTML = Math.floor(Math.random()*(max-min+1))+min;
+       }
+
+       //3.Boolean
+       console.log(Boolean(4>2));
+       var age  = 14;
+       var check = (age<18)? "Too young":"Old enough";
+       console.log(check);
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">This is paragraph 1</p>
+    <p id="p2">This is paragraph 2</p>
+    <p id="p3">This is paragraph 3</p>
+    
+    
+    <script>
+let getPara = document.getElementsByTagName("p");
+let getPara2 = getPara[1].innerHTML;
+let htmlCollectionLength = getPara.length;
+
+let i;
+for(i=0;i<htmlCollectionLength;i++){
+    getPara[i].style.backgroundColor = "blue";
+}
+    </script>
+</body>
+</html>

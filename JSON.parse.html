@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+let anyString = '{"name":"anooop","age":12,"city":"Butwal","birthDate":"2065-11-06"}';
+let myObject = JSON.parse(anyString);
+ myObject.birthDate = new Date(myObject.birthDate);
+ document.getElementById("demo").innerHTML = "He is " + myObject.name + " from " + myObject.city + " who's birthdate is " + myObject.birthDate;
+
+ 
+
+let xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function(){
+if(this.readyState == 4 && this.status == 200){
+    let myNewObject = JSON.parse(this.responseText);
+    document.getElementById("demo1").innerHTML = "Hello " + myNewObject.name;
+}
+};
+
+xmlhttp.open("GET","JSON.json",true);
+xmlhttp.send();
+    </script>
+</body>
+</html>

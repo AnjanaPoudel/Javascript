@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <body onload=displayMessage()> -->
+    <body>
+    <h1 id="bigHead" onclick="changeText(this)">This is heading h1</h1>
+    <p id="para1" onclick="this.innerHTML = 'Hey myan!'">Click me</p>
+    <button id="btn">Try me</button>
+    <p id="btnText"></p>
+    <input type="text" id="iField" onchange="changeToUppercase(this)" onfocus="borderField(this)"><br><br><br>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="height: 100px;width: 300px;background-color: darkgreen;padding: 20px;color: whitesmoke;">Mouse Over Me</div>
+    <button id="myNextBtn">Click to see..</button>
+    <p id="newBtnText"></p>
+   <p id="resizeT"></p>
+   <button id="theButton">Click here!</button>
+   <p id="mult"></p>
+   <button id="remove" onclick="removeEventHandler()">Remove</button>
+   
+   <script>
+
+// function displayMessage(){
+//     alert("This is achieved with onload event");
+// }
+
+document.getElementById("btn").onclick = displayText;
+function displayText(){
+    document.getElementById("btnText").innerHTML = "you just clicked button";
+}
+
+function changeText(id){
+    id.innerHTML = "OOOOOOOOOOOOOOPS!";
+}
+
+function changeToUppercase(id){
+    id.value = id.value.toUpperCase();
+}
+
+function mOver(id){
+    id.innerHTML = "Have a good day!";
+}
+
+function mOut(id){
+    id.innerHTML = "Mouse Over Me";
+}
+
+function borderField(id){
+    id.style.border = "1px solid blue";
+}
+
+
+// event listners
+document.getElementById("myNextBtn").addEventListener("click",myNewFunction);
+document.getElementById("myNextBtn").addEventListener("mouseover",mOver1)
+document.getElementById("myNextBtn").addEventListener("mouseout",mOut1)
+
+function myNewFunction(){
+    document.getElementById("newBtnText").innerHTML = "I am from new button";
+}
+
+function mOver1(){
+    document.getElementById("newBtnText").innerHTML = "Mouse over";
+}
+
+function mOut1(){
+    document.getElementById("newBtnText").innerHTML = "Mouse out";
+
+}
+
+function removeEventHandler(){
+document.getElementById("myNextBtn").removeEventListener("mouseout",mOut1);
+}
+
+
+// Applying eventListner to the window Object
+
+window.addEventListener("resize",resizeText);
+function resizeText(){
+    document.getElementById("resizeT").innerHTML = Math.random();
+}
+
+document.getElementById("theButton").addEventListener("click",function(){mulOfTwo(6,6);});
+function mulOfTwo(a,b){
+    document.getElementById("mult").innerHTML = a*b;
+}
+    </script>
+</body>
+</html>

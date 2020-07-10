@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Forms</title>
+</head>
+
+
+<body>
+    <form action="" method="post" onsubmit="return validateForm()" name="myForm">
+        Name: <input type="text" name="myName" id="">
+        <input type="submit" value="submit">
+        <input type="text" required>
+        
+    </form><br><br><br>
+
+    <input type="text" id="inputArea">
+    <button onclick="checkNumber()" type="submit">Submit</button>
+    <p id="demo"></p>
+   
+   <script>
+function validateForm(){
+let x = document.forms["myForm"]["myName"].value;
+if(x == ""){
+   alert("Please fill your name");
+   return false;
+}
+}
+
+function checkNumber(){
+    let text;
+    let num = document.getElementById("inputArea").value;
+    if(isNaN(num)|| num<1 || num>20){
+        
+        text = "Your input is not valid";
+    }
+    else{
+        text = "Your input is valid";
+    }
+
+    document.getElementById("demo").innerHTML = text;
+}
+    </script>
+</body>
+</html>

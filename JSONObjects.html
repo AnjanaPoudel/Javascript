@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        let myObject = {
+            "name": "anooop",
+            "age": 12,
+            "eyeColor": "Brown",
+            "car": null
+        }
+
+        console.log("Name: " + myObject.name);                       //accessing props with dot operator
+        console.log("Eye color: " + myObject["eyeColor"]);          //with bracket notation
+
+let x;
+        for(x in myObject){
+document.getElementById("demo").innerHTML += myObject[x] + "<br>";
+        }
+
+
+        let myNestedObject = {
+            "name": "anooop",
+            "age": 12,
+            "cities":{
+                "city1": "Kathmandu",
+                "city2": "Pokhara",
+                "city3": "Butwal"
+            }
+        }
+
+        console.log("City3: " + myNestedObject.cities.city3);
+        console.log("City2: " + myNestedObject.cities["city2"]);
+        myNestedObject.cities.city2 = "Chitwan";
+        delete myNestedObject.age;
+
+    </script>
+</body>
+</html>

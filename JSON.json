@@ -1,0 +1,9 @@
+{
+    "name": "anzana",
+    "age": 18,
+    "employee": {"name":"asmita","age":30,"city":"Kathmandu"},
+    "employees": ["anjana",30,"Butwal",{"eyeColor":"blue","height":5.2}],
+     "sale": true,
+     "lastName": null
+}
+
